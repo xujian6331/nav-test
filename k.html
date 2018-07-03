@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./k.css">
+	<title>我的导航	</title>
+</head >
+<body >
+	<header></header>
+	<main >
+	<div id="keyboard"></div>	
+	</main>
+	<footer></footer>
+	<script>	
+		var keys={
+
+			'0':['q','w','e','r','t','y','u','i','o','p',],
+			'1':['a','s','d','f','g','h','j','k','l'],
+			'2':['z','x','c','v','b','n','m'],
+			'length':3
+}
+		var hash = {
+			'q': 'qq.com' ,
+			'w': 'weibo.com',
+			'e': 'ele.me',
+			'r':'renren.com',
+			't':'tianya.com',
+			'y':'youtube.com',
+			
+			'a': 'alibaba.com'
+
+		}
+		var hashInlocalStorage=JSON.parse(localStorage.getItem('uuu'||'null'))
+		if(hashInlocalStorage){
+			hash=hashInlocalStorage
+		}
+		 index=0;
+		 while(index<keys.length){
+		    divKey=document.createElement('div')
+		    keyboard.appendChild(divKey);
+			index2=0
+			row=keys[index];
+			while(index2<row.length){
+				kbd=document.createElement('kbd')
+				kbd.textContent=row[index2]
+				kbd.className='key'
+				button= document.createElement('button')
+				button.textContent='编辑';
+				button.id=row[index2]
+				imgx=document.createElement('img')
+				imgx.src='http://'+ hash[row[index2]] +'/favicon.cio'
+				divKey.appendChild(kbd);
+				kbd.appendChild(button);
+				kbd.appendChild(imgx)
+				button.onclick = function(c1){
+					key=c1['target']['id']
+
+					x=prompt("请输入修改网址")
+					hash[key]=x
+					localStorage.setItem('uuu',JSON.stringify(hash))
+					
+				}
+				
+				index2 = index2+1
+			}
+			index=index+1
+			
+		}
+
+		document.onkeypress = function(jianting){
+			key=jianting['key'];
+			location.href=hash[key];
+		}
+		
+		
+
+	</script>
+</body>
+</html>
