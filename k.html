@@ -47,10 +47,11 @@
 				button.textContent='编辑';
 				button.id=row[index2]
 				imgx=document.createElement('img')
-				imgx.src='http://'+ hash[row[index2]] +'/favicon.cio'
+				imgx.src =hash[row[index2]] + '/favicon.cio'
+				kbd.appendChild(imgx)
 				divKey.appendChild(kbd);
 				kbd.appendChild(button);
-				kbd.appendChild(imgx)
+				
 				button.onclick = function(c1){
 					key=c1['target']['id']
 
