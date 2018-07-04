@@ -26,7 +26,11 @@
 			'r': 'renren.com',
 			't': 'tianya.com',
 			'y': 'youtube.com',
+			'u': 'uc.com',
+			'i': 'iqiyi.com'
 			'a': 'alibaba.com'
+			's': 'sohu.com',
+			'z': 'zhuhu.com'
 
 		}
 		var hashInlocalStorage=JSON.parse(localStorage.getItem('uuu'||'null'))
@@ -47,7 +51,7 @@
 				button.textContent='编辑';
 				button.id=row[index2]
 				imgx=document.createElement('img')
-				imgx.src =hash[row[index2]] + '/favicon.cio'
+				imgx.src =hash[row[index2]] + '/favicon.ico'
 				kbd.appendChild(imgx)
 				divKey.appendChild(kbd);
 				kbd.appendChild(button);
